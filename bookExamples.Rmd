@@ -1,0 +1,96 @@
+---
+title: "Shiny Interface Book"
+author: "OG"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+```{r install}
+#remotes::install_github("DivadNojnarg/OSUICode")
+#remotes::install_github("Athospd/wavesurfer")
+library(OSUICode, quietly = T, warn.conflicts = F)
+```
+
+# Chapter 1
+
+```{r chapter1}
+library(shiny)
+OSUICode::run_example("intro/dj-system", package = "OSUICode")
+```
+
+```{r example1}
+#shiny::runApp("chapter1Code/example1/app1.R")
+
+```
+
+# Chapter 2
+
+```{r chapter2}
+#install.packages("htmltools")
+div("hello world")
+
+
+```
+
+`withTags` : allows writing of tags without `tag$` for the less common tags such as '<nav>'
+
+`tagList()` : list of tags for html document
+
+```{r 2.1}
+tag23 <- tagList(withTags(
+  nav(div("list:"), ul(li("1"), li("2")))
+))
+str(tag23)
+# type tag23 in console
+as.character(tag23)
+```
+
+```{r htmlFun}
+div(HTML("Hello <u>World</u>"))
+```
+
+## Tag structure
+
+```{r tag1}
+# create the tag
+myTag <- div(
+  class = "divclass", 
+  id = "first",
+  h1("My first child!"),
+  span(class = "child", id = "baby", "Crying")
+)
+# access its name
+ myTag$name
+# access its attributes (id and class)
+myTag$attribs
+# access children (returns a list of 2 elements)
+myTag$children
+# access its class
+str(myTag)
+as.character(myTag)
+# Modification de la classe 
+myTag$children[[2]]$attribs$class <- "adult"
+```
+
+## Shiny RPG example
+
+```{r}
+rpgSelect <- function(inputId, label, choices, selected = NULL,
+                      multiple = FALSE, size = NULL) {
+  shiny::selectInput(
+    inputId,
+    label,
+    choices,
+    selected,
+    multiple,
+    selectize = FALSE,
+    width = NULL,
+    size
+  )
+}
+```
