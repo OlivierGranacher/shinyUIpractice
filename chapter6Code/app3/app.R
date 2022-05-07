@@ -1,23 +1,15 @@
-#
-# This is a Shiny web application. You can run the application by clicking
-# the 'Run App' button above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
+
 
 library(shiny)
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
-   
+     shiny::includeCSS("www/custom.css"),
      tags$style("#title { font-weight : bolder;}"),
      ## https://bulma.io/documentation/elements/button/
      tags$link(rel = "stylesheet", type="text/css", href="bulma.css"),
     # Application title
     titlePanel(h3("Test Bulma Button",
-                  style = "color : red;",
                   id = "title")
                ),
 
