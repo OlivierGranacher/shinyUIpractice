@@ -9,14 +9,14 @@ mytheme <- create_theme(
   ),
   adminlte_sidebar(
     width = "190px",
-    dark_bg = mainColor,
-    # dark_hover_bg = "#81A1C1",
-    # dark_color = "#2E3440"
+    dark_bg = "pink",
+    dark_hover_bg = "#81A1C1",
+    dark_color = "#2E3440"
   ),
   adminlte_global(
     content_bg = "#FFF",
      box_bg = "#FFF", 
-    # info_box_bg = "#D8DEE9"
+    info_box_bg = "#FFF"
   )
 )
   

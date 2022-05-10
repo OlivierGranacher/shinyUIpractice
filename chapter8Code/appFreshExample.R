@@ -5,18 +5,18 @@ library(fresh)
 # Create the theme
 mytheme <- create_theme(
   adminlte_color(
-    light_blue = "#434C5E"
+    light_blue = "#333"
   ),
   adminlte_sidebar(
-    width = "400px",
-    dark_bg = "#D8DEE9",
-    dark_hover_bg = "#81A1C1",
-    dark_color = "#2E3440"
+    width = "300px",
+    dark_bg = "#333",
+    dark_hover_bg = "#555",
+    dark_color = "#555"
   ),
   adminlte_global(
-    content_bg = "#FFF",
-    box_bg = "#D8DEE9", 
-    info_box_bg = "#D8DEE9"
+    content_bg = "#666",
+    box_bg = "#333", 
+    info_box_bg = "#333"
   )
 )
 
